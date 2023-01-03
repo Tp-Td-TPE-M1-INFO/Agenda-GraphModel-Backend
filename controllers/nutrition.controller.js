@@ -10,8 +10,7 @@ module.exports.createNutrition = (req, res) =>{
         nbEaten: req.body.nbEaten,
         qtyWater: req.body.qtyWater,
         eatingFruit: req.body.eatingFruit,
-        nbMovement: req.body.nbMovement,
-        heathProblem: req.body.heathProblem
+        nbMovement: req.body.nbMovement
     });
 
     nutrition.save()
