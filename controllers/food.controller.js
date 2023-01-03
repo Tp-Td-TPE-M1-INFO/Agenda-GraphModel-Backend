@@ -8,7 +8,7 @@ module.exports.getFoods = (req, res) =>{
 
 module.exports.createFood = (req, res) =>{
     const food = new Food({
-        name: req.body,
+        name: req.body.name,
         glucide: req.body.glucide,
         proteine: req.body.proteine,
         lipide: req.body.lipide,

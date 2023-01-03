@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 mongoose.set("debug", true);
 mongoose.set("strictQuery", false);
 
-mongoose.connect("mongodb+srv://kirito:kirito237@agendanutritionnel.cmtqesy.mongodb.net/?retryWrites=true&w=majority/agendaNutritionnel",
+mongoose.connect("mongodb+srv://kirito:kirito237@agendanutritionnel.cmtqesy.mongodb.net/FoodAgenda",
 {
   useNewUrlParser: true,
   useUnifiedTopology: true,
