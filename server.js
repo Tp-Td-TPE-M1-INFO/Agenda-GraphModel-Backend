@@ -21,6 +21,9 @@ const corsOptions = {
     'methods': 'GET,HEAD,PUT,PATCH,POST,DELETE',
     'preflightContinue': false
 }
+app.get('/', (req, res) =>{
+    res.send("Bienvenue sur notre api d'agenda nutritionnel")
+})
 
 app.use(cors(corsOptions));
 app.use(bodyParser.json());
