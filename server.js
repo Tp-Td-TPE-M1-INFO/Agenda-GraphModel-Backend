@@ -7,26 +7,23 @@ const nutritionRoutes = require('./routes/nutrition.routes');
 const foodRoutes = require('./routes/food.routes');
 const healthProblemRoutes = require('./routes/healthProblem.routes');
 
-
-
 require('./config/db');
 const {checkUser, requireAuth} = require('./middleware/auth.middleware');
-const cors = require('cors');
+
 const app = express();
 
-const corsOptions = {
-    origin: process.env.CLIENT_URL,
-    credentials: true,
-    'allowedHeaders': ['sessionId', 'Content-Type'],
-    'exposedHeaders': ['sessionId'],
-    'methods': 'GET,HEAD,PUT,PATCH,POST,DELETE',
-    'preflightContinue': false
-}
+app.use((req, res, next) => {
+    res.setHeader('Access-Control-Allow-Origin', '*');
+    res.setHeader('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content, Accept, Content-Type, Authorization');
+    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, PATCH, OPTIONS');
+    next();
+});
+
 app.get('/', (req, res) =>{
     res.send("Bienvenue sur notre api d'agenda nutritionnel")
 })
 
-app.use(cors(corsOptions));
+
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(cookieParser());
