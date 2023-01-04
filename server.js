@@ -20,7 +20,7 @@ app.use((req, res, next) => {
 });
 
 app.get('/', (req, res) =>{
-    res.send("Bienvenue sur notre api d'agenda nutritionnel")
+    res.send("Bienvenue sur notre api d'agenda nutritionnel - test CD")
 })
 
 
