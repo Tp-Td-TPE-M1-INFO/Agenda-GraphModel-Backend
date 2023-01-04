@@ -5,6 +5,7 @@ const cookieParser = require('cookie-parser');
 const userRoutes = require('./routes/user.routes');
 const nutritionRoutes = require('./routes/nutrition.routes');
 const foodRoutes = require('./routes/food.routes');
+const healthProblemRoutes = require('./routes/healthProblem.routes');
 
 
 
@@ -36,10 +37,11 @@ app.get('/jwtid', requireAuth, (req, res) =>{
    res.status(200).send(res.locals.user._id)
 })
 
-//user
+//routes
 app.use('/api/user',userRoutes);
 app.use('/api/nutrition', nutritionRoutes);
 app.use('/api/food', foodRoutes);
+app.use('/api/health-problem', healthProblemRoutes)
 
 app.listen(process.env.PORT, ()=>{
     console.log(`listen on port ${process.env.PORT}`);

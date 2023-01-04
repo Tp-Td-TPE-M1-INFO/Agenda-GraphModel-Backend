@@ -6,11 +6,12 @@ module.exports.createNutrition = (req, res) =>{
     const nutrition = new Nutrition({
         userId: req.params.id,
         date: req.body.date,
-        food: req.body.food,
+        foods: req.body.foods,
         nbEaten: req.body.nbEaten,
         qtyWater: req.body.qtyWater,
         eatingFruit: req.body.eatingFruit,
-        nbMovement: req.body.nbMovement
+        nbMovement: req.body.nbMovement,
+        healthProblem: req.body.healthProblem
     });
 
     nutrition.save()

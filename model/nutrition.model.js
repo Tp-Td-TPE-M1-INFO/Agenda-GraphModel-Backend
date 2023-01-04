@@ -1,5 +1,4 @@
 const mongoose = require('mongoose');
-const Food = require('./food.model');
 
 const NutritionSchema = new mongoose.Schema({
     userId:{
@@ -8,18 +7,17 @@ const NutritionSchema = new mongoose.Schema({
     },
 
     date: {
-        type: Date,
+        type: String,
         default: Date.now()
     },
 
-    food:{
-        type: [Food.Schema],
+    foods:{
+        type:[String]
     },
     nbEaten:{
         type: Number,
         min: 0,
         max: 10,
-        
     }, 
 
     qtyWater:{
@@ -35,9 +33,8 @@ const NutritionSchema = new mongoose.Schema({
         type: Number,
         default:0
     },
-    heathProblem: {
+    healthProblem: {
         type: [String],
-        required: true
     } 
 });
 
