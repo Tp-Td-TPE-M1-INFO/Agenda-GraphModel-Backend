@@ -8,7 +8,6 @@ module.exports.foodRecommendation = async (req, res) => {
     const nutritions = await Nutrition.find({userId: req.params.id})
 
     const foods = [];
-    console.log(nutritions)
     let glucideScore = 0;
     let proteineScore = 0;
     let lipideScore = 0;
