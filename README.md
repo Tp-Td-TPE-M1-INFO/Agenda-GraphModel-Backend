@@ -6,13 +6,15 @@ This repo contains API of *agenda-graphmodel* mobile app. The routes follows
 ### Nutrition --> /api/nutition
 > * GET /get-nutrition/:id
 > * POST /post-nutrition/:id
-> - PUT /put-nutrition/:id
+> * PUT /put-nutrition/:id
 > * DELETE /delete-nutrition/:id
 
 ### Food --> /api/food
 > * GET /recommend/:id
 > * GET /getfood
 > * POST /postfood
+### Search --> api/search
+> * GET /
 
 ### Health-problems --> /api/health-problem
 > * GET /get-healthProblem

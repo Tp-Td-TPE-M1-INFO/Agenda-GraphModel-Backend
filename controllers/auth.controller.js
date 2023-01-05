@@ -47,7 +47,6 @@ module.exports.signIn = async (req, res) =>{
         console.log(user);
     }
     catch(err){
-        console.log(err);
         return res.status(401).json({message:"paire nom d'utiliasateur/mot de passe incorrecte"});
     }
 };

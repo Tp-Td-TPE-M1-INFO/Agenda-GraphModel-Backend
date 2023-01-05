@@ -31,7 +31,7 @@ module.exports.readNutrition = async (req, res) =>{
                 nutritions[i].foods[j] = foodT.name;
             }
         }
-
+        
         res.status(200).json(nutritions);
     }
     catch(err){
@@ -39,7 +39,7 @@ module.exports.readNutrition = async (req, res) =>{
     }        
 };
 
-module.exports.updateNutrition = (req, res) =>{
+module.exports.updateNutrition =  (req, res) =>{
     const nutrition = new Nutrition({
         userId: req.params.id,
         date: req.body.date,
