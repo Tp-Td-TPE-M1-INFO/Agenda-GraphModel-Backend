@@ -19,9 +19,9 @@ const userSchema = mongoose.Schema({
     username: {
         type: String,
         required: true,
-        minlength: 3,
-        maxlength: 55,
+        minlength: 1,
         unique: true,
+        maxlength: 55,
         trim: true
     },
     age:{

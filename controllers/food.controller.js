@@ -8,15 +8,11 @@ module.exports.getFoods = (req, res) =>{
 
 
 module.exports.createFood = async (req, res) =>{
-    const food = new Food({
-        name: req.body.name,
-        glucide: req.body.glucide,
-        proteine: req.body.proteine,
-        lipide: req.body.lipide,
-        sel: req.body.sel
-    });
-    
-    food.save()
-        .then(food => res.status(201).json(food))
-        .catch(err => res.status(400).json(err));
+    const {name, glucide, proteine, lipide, sel} = req.body;
+    try{
+        const food = await Food.create(name, glucide, proteine, lipide, sel);
+        res.status(201).json({food});
+    } catch(err){
+        res.status(400).json(err);
+    }    
 };

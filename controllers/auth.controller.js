@@ -23,17 +23,17 @@ const signUpErrors=(err) => {
     return errors;
 }
 
-module.exports.signUp = async(req, res) =>{
-    const user = new User({
-        surname : req.body.surname,
-        name : req.body.name,
-        username: req.body.username,
-        age: req.body.age,
-        password: req.body.password
-    });
-    user.save()
-        .then(()=> res.status(201).json({user: user._id}))
-        .catch(error => res.status(400).json(signUpErrors(error)));
+module.exports.signUp = async (req, res) =>{
+    const {surname ,name, username, age, password} = req.body;
+    try {
+        const user = await User.create({surname, name, username, age, password});
+        res.status(201).json({ user: user});
+    }
+    catch(err){
+        const errors = signUpErrors(err);
+        res.status(400).send({errors});
+        
+    }
 }
 
 module.exports.signIn = async (req, res) =>{
@@ -43,7 +43,8 @@ module.exports.signIn = async (req, res) =>{
         const user = await User.login(username, password);
         const token = createToken(user._id);
         res.cookie('jwt', token, {httpOnly: true, maxAge});
-        res.status(200).json(user);
+        res.status(200).json({user});
+        console.log(user);
     }
     catch(err){
         console.log(err);
