@@ -6,6 +6,7 @@ module.exports.getFoods = (req, res) =>{
         .catch((errors) => res.status(400).json(errors));
 };
 
+
 module.exports.createFood = async (req, res) =>{
     const food = new Food({
         name: req.body.name,

@@ -18,7 +18,7 @@ module.exports.updateUser = (req, res) =>{
             _id : req.params.id,
             surname : req.body.surname,
             name : req.body.name,
-            userName: req.body.userName,
+            username: req.body.username,
             age: req.body.age,
             password: req.body.password
         });

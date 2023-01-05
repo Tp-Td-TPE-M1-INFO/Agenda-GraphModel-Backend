@@ -9,10 +9,10 @@ const createToken = (id) =>{
 };
 
 const signUpErrors=(err) => {
-    let errors = { userName: '', password: '' };
+    let errors = { username: '', password: '' };
     
     if(err.message.includes('userName'))
-        errors.userName = " nom d'utilisateur incorrect ou déjà pris";
+        errors.username = " nom d'utilisateur incorrect ou déjà pris";
   
     if(err.message.includes('password'))
         errors.password = "Le mot de passe doit contenir au moins 6 caractères";
@@ -27,7 +27,7 @@ module.exports.signUp = async(req, res) =>{
     const user = new User({
         surname : req.body.surname,
         name : req.body.name,
-        userName: req.body.userName,
+        username: req.body.username,
         age: req.body.age,
         password: req.body.password
     });
@@ -37,13 +37,13 @@ module.exports.signUp = async(req, res) =>{
 }
 
 module.exports.signIn = async (req, res) =>{
-    const { userName, password} = req.body;
+    const { username, password} = req.body;
 
     try{
-        const user = await User.login(userName, password);
+        const user = await User.login(username, password);
         const token = createToken(user._id);
         res.cookie('jwt', token, {httpOnly: true, maxAge});
-        res.status(200).json({user: user._id});
+        res.status(200).json(user);
     }
     catch(err){
         console.log(err);
