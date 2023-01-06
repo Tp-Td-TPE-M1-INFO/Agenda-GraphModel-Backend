@@ -1,4 +1,4 @@
-![Logo](file:///C:/Users/Essi%20Junior/Desktop/Depot%20Local%20Git/inf4077/Agenda-GraphModel/Agenda-GraphModel/assets/images/logo.png)
+![Logo](https://github.com/Tp-Td-TPE-M1-INFO/Agenda-GraphModel/blob/main/Agenda-GraphModel/assets/images/logo.png?raw=true)
 # Agenda-GraphModel-Backend
 This repo contains API of *agenda-graphmodel* mobile app. The routes follows
 
