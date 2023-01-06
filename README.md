@@ -2,6 +2,12 @@
 This repo contains API of *agenda-graphmodel* mobile app. The routes follows
 
 ### User --> /api/user
+> * POST /register
+> * POST /login
+> * GET /logout
+> * GET /:id
+> * PUT /:id
+> * DELETE /:id
 
 ### Nutrition --> /api/nutition
 > * GET /get-nutrition/:id
@@ -13,6 +19,7 @@ This repo contains API of *agenda-graphmodel* mobile app. The routes follows
 > * GET /recommend/:id
 > * GET /getfood
 > * POST /postfood
+
 ### Search --> api/search
 > * GET /
 
